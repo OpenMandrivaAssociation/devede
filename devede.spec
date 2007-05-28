@@ -16,7 +16,9 @@ Requires:   	mkisofs
 Requires:   	mplayer
 Requires:   	pygtk2.0
 Requires:   	python
+%ifarch %ix86
 Requires:   	python-psyco
+%endif
 Requires:   	vcdimager
 Requires(post,postun): desktop-common-data
 
