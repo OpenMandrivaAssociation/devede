@@ -1,6 +1,6 @@
 Name:       	devede
 Version:    	2.13
-Release:    	%mkrel 2
+Release:    	%mkrel 3
 Summary:    	Graphical frontend to create video DVDs
 License:    	GPL
 Group:      	Graphical desktop/Other
@@ -10,6 +10,7 @@ Patch:      	devede-2.13-mandriva_category.patch
 BuildRoot:  	%_tmppath/%name-buildroot
 BuildRequires:	bash
 BuildRequires:	coreutils
+BuildRequires:	dvdauthor
 Requires:   	dvdauthor
 Requires:   	mencoder
 Requires:   	mkisofs
