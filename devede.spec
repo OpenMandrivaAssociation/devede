@@ -1,11 +1,11 @@
 Name:       	devede
-Version:    	2.13
-Release:    	%mkrel 4
+Version:    	3.0
+Release:    	%mkrel 1
 Summary:    	Graphical frontend to create video DVDs
 License:    	GPL
 Group:      	Graphical desktop/Other
 URL:        	http://www.rastersoft.com/programas/devede.html
-Source:     	http://www.rastersoft.com/descargas/devede-2.13.tar.bz2
+Source:     	http://www.rastersoft.com/descargas/%{name}-%{version}.tar.bz2
 Patch:      	devede-2.13-mandriva_category.patch
 BuildRoot:  	%_tmppath/%name-buildroot
 BuildRequires:	bash
