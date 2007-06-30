@@ -40,7 +40,7 @@ libdir=%_libdir \
 	./install.sh
 
 # fd.o icons - AdamW 2007/06
-mkdir -p %buildroot%_iconsdir/hicolor/{16x16,32x32,48x48,x64x64}/apps
+mkdir -p %buildroot%_iconsdir/hicolor/{16x16,32x32,48x48,64x64}/apps
 mv %buildroot%_datadir/pixmaps/%{name}.png %buildroot%_iconsdir/hicolor/64x64/apps/%{name}.png
 convert -scale 48 %buildroot%_iconsdir/hicolor/64x64/apps/%{name}.png %buildroot%_iconsdir/hicolor/48x48/apps/%{name}.png
 convert -scale 32 %buildroot%_iconsdir/hicolor/64x64/apps/%{name}.png %buildroot%_iconsdir/hicolor/32x32/apps/%{name}.png
