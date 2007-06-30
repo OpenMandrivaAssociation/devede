@@ -1,15 +1,15 @@
 Name:       	devede
 Version:    	3.0
-Release:    	%mkrel 1
+Release:    	%mkrel 2
 Summary:    	Graphical frontend to create video DVDs
 License:    	GPL
 Group:      	Graphical desktop/Other
 URL:        	http://www.rastersoft.com/programas/devede.html
 Source:     	http://www.rastersoft.com/descargas/%{name}-%{version}.tar.bz2
-Patch:      	devede-2.13-mandriva_category.patch
 BuildRoot:  	%_tmppath/%name-buildroot
 BuildRequires:	bash
 BuildRequires:	coreutils
+BuildRequires:	imagemagick
 Requires:   	dvdauthor
 Requires:   	mencoder
 Requires:   	mkisofs
@@ -24,12 +24,11 @@ Requires(post,postun): desktop-common-data
 
 %description
 DeVeDe is a program to create video DVDs (compatible with home players) from
-nearly any video format. It only uses Python 2.4, MPlayer, Mencoder, DVDAuthor,
+nearly any video format. It only uses Python, MPlayer, Mencoder, DVDAuthor,
 VCDImager, and mkisofs, so it has very few dependencies.
 
 %prep
 %setup -q
-%patch -p1 -b .mandriva_category
 
 %build
 
@@ -40,13 +39,22 @@ prefix=%_prefix \
 libdir=%_libdir \
 	./install.sh
 
+# fd.o icons - AdamW 2007/06
+mkdir -p %buildroot%_iconsdir/hicolor/{16x16,32x32,48x48,x64x64}/apps
+mv %buildroot%_datadir/pixmaps/%{name}.png %buildroot%_iconsdir/hicolor/64x64/apps/%{name}.png
+convert -scale 48 %buildroot%_iconsdir/hicolor/64x64/apps/%{name}.png %buildroot%_iconsdir/hicolor/48x48/apps/%{name}.png
+convert -scale 32 %buildroot%_iconsdir/hicolor/64x64/apps/%{name}.png %buildroot%_iconsdir/hicolor/32x32/apps/%{name}.png
+convert -scale 16 %buildroot%_iconsdir/hicolor/64x64/apps/%{name}.png %buildroot%_iconsdir/hicolor/16x16/apps/%{name}.png
+
 %find_lang %name
 
 %post
 %update_menus
+%update_icon_cache hicolor
 
 %postun
 %clean_menus
+%clean_icon_cache hicolor
 
 %clean
 rm -rf %buildroot
@@ -58,5 +66,8 @@ rm -rf %buildroot
 %_datadir/applications/devede.desktop
 %_datadir/devede
 %_datadir/doc/devede
-%_datadir/pixmaps/devede.png
+%_iconsdir/hicolor/64x64/apps/%{name}.png
+%_iconsdir/hicolor/48x48/apps/%{name}.png
+%_iconsdir/hicolor/32x32/apps/%{name}.png
+%_iconsdir/hicolor/16x16/apps/%{name}.png
 %_libdir/devede
