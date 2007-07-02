@@ -34,6 +34,9 @@ VCDImager, and mkisofs, so it has very few dependencies.
 %build
 
 %install
+# The stuff that goes to /usr/lib is just python scripts, not actually
+# arch-specific. The app always looks for them in /usr/lib , even on
+# x86-64. So define libdir as %_prefix/lib. See bug #31692. -AdamW 2007/06
 rm -rf %buildroot
 DESTDIR=%buildroot \
 prefix=%_prefix \
