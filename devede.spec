@@ -1,12 +1,13 @@
 Name:       	devede
 Version:    	3.01
-Release:    	%mkrel 1
+Release:    	%mkrel 2
 Summary:    	Graphical frontend to create video DVDs
 License:    	GPL
 Group:      	Graphical desktop/Other
 URL:        	http://www.rastersoft.com/programas/devede.html
 Source:     	http://www.rastersoft.com/descargas/%{name}-%{version}.tar.bz2
 BuildRoot:  	%_tmppath/%name-buildroot
+BuildArch:	noarch
 BuildRequires:	bash
 BuildRequires:	coreutils
 BuildRequires:	imagemagick
@@ -36,7 +37,7 @@ VCDImager, and mkisofs, so it has very few dependencies.
 rm -rf %buildroot
 DESTDIR=%buildroot \
 prefix=%_prefix \
-libdir=%_libdir \
+libdir=%_prefix/lib \
 	./install.sh
 
 # fd.o icons - AdamW 2007/06
@@ -61,13 +62,13 @@ rm -rf %buildroot
 
 %files -f %name.lang
 %defattr(0755,root,root,0755)
-%_bindir/devede
+%_bindir/%{name}
 %defattr(0644,root,root,0755)
-%_datadir/applications/devede.desktop
-%_datadir/devede
-%_datadir/doc/devede
+%_datadir/applications/%{name}.desktop
+%_datadir/%{name}
+%_datadir/doc/%{name}
 %_iconsdir/hicolor/64x64/apps/%{name}.png
 %_iconsdir/hicolor/48x48/apps/%{name}.png
 %_iconsdir/hicolor/32x32/apps/%{name}.png
 %_iconsdir/hicolor/16x16/apps/%{name}.png
-%_libdir/devede
+%_prefix/lib/%{name}
