@@ -5,12 +5,16 @@ Summary:    	Graphical frontend to create video DVDs
 License:    	GPLv3+
 Group:      	Graphical desktop/Other
 URL:        	http://www.rastersoft.com/programas/devede.html
-Source:     	http://www.rastersoft.com/descargas/%{name}-%{version}.tar.bz2
+Source0:     	http://www.rastersoft.com/descargas/%{name}-%{version}.tar.bz2
+# Created from upstream .svg icon by GIMP - ImageMagick does not do well
+# at converting .svg on the fly - AdamW 2007/09
+Source1:	devede-16.png
+Source2:	devede-32.png
+Source3:	devede-48.png
 BuildRoot:  	%_tmppath/%name-buildroot
 BuildArch:	noarch
 BuildRequires:	bash
 BuildRequires:	coreutils
-BuildRequires:	imagemagick
 Requires:   	dvdauthor
 Requires:   	mencoder
 Requires:   	mkisofs
@@ -44,12 +48,12 @@ prefix=%_prefix \
 libdir=%_prefix/lib \
 	./install.sh
 
-# fd.o icons - AdamW 2007/06
-mkdir -p %buildroot%_iconsdir/hicolor/{16x16,32x32,48x48,64x64}/apps
-mv %buildroot%_datadir/pixmaps/%{name}.png %buildroot%_iconsdir/hicolor/64x64/apps/%{name}.png
-convert -scale 48 %buildroot%_iconsdir/hicolor/64x64/apps/%{name}.png %buildroot%_iconsdir/hicolor/48x48/apps/%{name}.png
-convert -scale 32 %buildroot%_iconsdir/hicolor/64x64/apps/%{name}.png %buildroot%_iconsdir/hicolor/32x32/apps/%{name}.png
-convert -scale 16 %buildroot%_iconsdir/hicolor/64x64/apps/%{name}.png %buildroot%_iconsdir/hicolor/16x16/apps/%{name}.png
+# fd.o icons
+mkdir -p %buildroot%_iconsdir/hicolor/{16x16,32x32,48x48,scalable}/apps
+mv %buildroot%_datadir/pixmaps/%{name}.svg %buildroot%_iconsdir/hicolor/scalable/apps/%{name}.svg
+install -m 644 %{SOURCE1} %buildroot%_iconsdir/hicolor/16x16/apps/%{name}.png
+install -m 644 %{SOURCE2} %buildroot%_iconsdir/hicolor/32x32/apps/%{name}.png
+install -m 644 %{SOURCE3} %buildroot%_iconsdir/hicolor/48x48/apps/%{name}.png
 
 %find_lang %name
 
@@ -71,5 +75,5 @@ rm -rf %buildroot
 %_datadir/applications/%{name}.desktop
 %_datadir/%{name}
 %_datadir/doc/%{name}
-%_iconsdir/hicolor/*/apps/%{name}.png
+%_iconsdir/hicolor/*/apps/%{name}.*
 %_prefix/lib/%{name}
