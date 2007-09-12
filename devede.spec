@@ -1,8 +1,8 @@
 Name:       	devede
-Version:    	3.01
-Release:    	%mkrel 2
+Version:    	3.1b
+Release:    	%mkrel 1
 Summary:    	Graphical frontend to create video DVDs
-License:    	GPL
+License:    	GPLv3+
 Group:      	Graphical desktop/Other
 URL:        	http://www.rastersoft.com/programas/devede.html
 Source:     	http://www.rastersoft.com/descargas/%{name}-%{version}.tar.bz2
@@ -21,6 +21,7 @@ Requires:   	python
 Requires:   	python-psyco
 %endif
 Requires:   	vcdimager
+Requires:	python-cairo
 Requires(post,postun): desktop-common-data
 
 %description
@@ -70,8 +71,5 @@ rm -rf %buildroot
 %_datadir/applications/%{name}.desktop
 %_datadir/%{name}
 %_datadir/doc/%{name}
-%_iconsdir/hicolor/64x64/apps/%{name}.png
-%_iconsdir/hicolor/48x48/apps/%{name}.png
-%_iconsdir/hicolor/32x32/apps/%{name}.png
-%_iconsdir/hicolor/16x16/apps/%{name}.png
+%_iconsdir/hicolor/*/apps/%{name}.png
 %_prefix/lib/%{name}
