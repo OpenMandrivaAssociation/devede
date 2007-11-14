@@ -20,6 +20,7 @@ Requires:   	mencoder
 Requires:   	mkisofs
 Requires:   	mplayer
 Requires:   	pygtk2.0
+Requires:   	pygtk2.0-libglade
 Requires:   	python
 %ifarch %ix86
 Requires:   	python-psyco
