@@ -11,7 +11,6 @@ Source0:     	http://www.rastersoft.com/descargas/%{name}-%{version}.tar.bz2
 Source1:	devede-16.png
 Source2:	devede-32.png
 Source3:	devede-48.png
-BuildRoot:  	%_tmppath/%name-buildroot
 BuildArch:	noarch
 BuildRequires:	bash
 BuildRequires:	coreutils
