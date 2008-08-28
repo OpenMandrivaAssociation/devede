@@ -1,5 +1,5 @@
 Name:       	devede
-Version:    	3.11
+Version:    	3.11b
 Release:    	%mkrel 1
 Summary:    	Graphical frontend to create video DVDs
 License:    	GPLv3+
@@ -35,7 +35,7 @@ nearly any video format. It only uses Python, MPlayer, Mencoder, DVDAuthor,
 VCDImager, and mkisofs, so it has very few dependencies.
 
 %prep
-%setup -q
+%setup -q -n devede-3.11
 
 %build
 
