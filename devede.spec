@@ -1,11 +1,13 @@
+%define mainver %(echo %{version} | sed -e "s/[a-z]*//g")
+
 Name:       	devede
-Version:    	3.11b
+Version:    	3.13.0
 Release:    	%mkrel 1
 Summary:    	Graphical frontend to create video DVDs
 License:    	GPLv3+
 Group:      	Graphical desktop/Other
 URL:        	http://www.rastersoft.com/programas/devede.html
-Source0:     	http://www.rastersoft.com/descargas/%{name}-%{version}.tar.bz2
+Source0:        http://www.rastersoft.com/descargas/%{name}-%{version}.tar.bz2
 # Created from upstream .svg icon by GIMP - ImageMagick does not do well
 # at converting .svg on the fly - AdamW 2007/09
 Source1:	devede-16.png
@@ -20,7 +22,6 @@ Requires:   	mencoder
 Requires:   	mkisofs
 Requires:   	mplayer
 Requires:   	pygtk2.0
-Requires:   	pygtk2.0-libglade
 Requires:   	python
 %ifarch %ix86
 Requires:   	python-psyco
@@ -35,7 +36,7 @@ nearly any video format. It only uses Python, MPlayer, Mencoder, DVDAuthor,
 VCDImager, and mkisofs, so it has very few dependencies.
 
 %prep
-%setup -q -n devede-3.11
+%setup -q -n devede-%{mainver}
 
 %build
 
