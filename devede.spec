@@ -1,7 +1,7 @@
 %define mainver %(echo %{version} | sed -e "s/[a-z]*//g")
 
 Name:       	devede
-Version:    	3.13.0
+Version:    	3.13.1
 Release:    	%mkrel 1
 Summary:    	Graphical frontend to create video DVDs
 License:    	GPLv3+
