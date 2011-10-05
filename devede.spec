@@ -1,7 +1,7 @@
 ##%define mainver %(echo %{version} | sed -e "s/[a-z]*//g")
 
 Name:		devede
-Version:	3.16.9
+Version:	3.17.0
 Release:	%mkrel 1
 Summary:	Graphical frontend to create video DVDs/(S)VCDs
 License:	GPLv3+
@@ -32,7 +32,7 @@ nearly any video format. It only uses Python, MPlayer, Mencoder, DVDAuthor,
 VCDImager, and mkisofs, so it has very few dependencies.
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q -n %{name}
 
 # remove shebangs...
 %{__sed} -i -e '/^#!\//, 1d' %{name}_*.py
@@ -68,7 +68,7 @@ rm -f %{buildroot}/%{_datadir}/doc/%{name}/html/*~
 %clean
 rm -rf %{buildroot}
 
-%files -f %name.lang
+%files -f %{name}.lang
 %defattr(0755,root,root,0755)
 %{_bindir}/%{name}
 %{_bindir}/%{name}_debug
