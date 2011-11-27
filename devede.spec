@@ -1,7 +1,7 @@
 ##%define mainver %(echo %{version} | sed -e "s/[a-z]*//g")
 
 Name:		devede
-Version:	3.17.0
+Version:	3.19.0
 Release:	%mkrel 1
 Summary:	Graphical frontend to create video DVDs/(S)VCDs
 License:	GPLv3+
@@ -13,7 +13,6 @@ Source0:	http://www.rastersoft.com/descargas/%{name}-%{version}.tar.bz2
 Source1:	devede-16.png
 Source2:	devede-32.png
 Source3:	devede-48.png
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 BuildArch:	noarch
 BuildRequires:	bash
 BuildRequires:	coreutils
@@ -45,7 +44,6 @@ VCDImager, and mkisofs, so it has very few dependencies.
 # The stuff that goes to /usr/lib is just python scripts, not actually
 # arch-specific. The app always looks for them in /usr/lib , even on
 # x86-64. So define libdir as %_prefix/lib. See bug #31692. -AdamW 2007/06
-rm -rf %{buildroot}
 DESTDIR=%{buildroot} \
 prefix=%{_prefix} \
 libdir=%{_datadir}/ \
@@ -64,9 +62,6 @@ rm -f %{buildroot}/%{_bindir}/%{name}-debug
 rm -f %{buildroot}/%{_datadir}/doc/%{name}/html/*~
 
 %find_lang %{name}
-
-%clean
-rm -rf %{buildroot}
 
 %files -f %{name}.lang
 %defattr(0755,root,root,0755)
