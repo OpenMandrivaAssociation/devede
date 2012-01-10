@@ -1,7 +1,7 @@
 ##%define mainver %(echo %{version} | sed -e "s/[a-z]*//g")
 
 Name:		devede
-Version:	3.19.0
+Version:	3.21.0
 Release:	%mkrel 1
 Summary:	Graphical frontend to create video DVDs/(S)VCDs
 License:	GPLv3+
@@ -31,16 +31,16 @@ nearly any video format. It only uses Python, MPlayer, Mencoder, DVDAuthor,
 VCDImager, and mkisofs, so it has very few dependencies.
 
 %prep
-%setup -q -n %{name}
+%setup -q
 
 # remove shebangs...
-%{__sed} -i -e '/^#!\//, 1d' %{name}_*.py
+%__sed -i -e '/^#!\//, 1d' %{name}_*.py
 
 %build
-
-%{__sed} -i 's/\/usr\/lib\/devede/\/usr\/share\/devede/' %{name}.py
+%__sed -i 's/\/usr\/lib\/devede/\/usr\/share\/devede/' %{name}.py
 
 %install
+%__rm -rf %{buildroot}
 # The stuff that goes to /usr/lib is just python scripts, not actually
 # arch-specific. The app always looks for them in /usr/lib , even on
 # x86-64. So define libdir as %_prefix/lib. See bug #31692. -AdamW 2007/06
@@ -48,7 +48,6 @@ DESTDIR=%{buildroot} \
 prefix=%{_prefix} \
 libdir=%{_datadir}/ \
 	./install.sh
-
 
 # fd.o icons
 mkdir -p %{buildroot}/%{_iconsdir}/hicolor/{16x16,32x32,48x48,scalable}/apps
@@ -62,6 +61,9 @@ rm -f %{buildroot}/%{_bindir}/%{name}-debug
 rm -f %{buildroot}/%{_datadir}/doc/%{name}/html/*~
 
 %find_lang %{name}
+
+%clean
+%__rm -rf %{buildroot}
 
 %files -f %{name}.lang
 %defattr(0755,root,root,0755)
