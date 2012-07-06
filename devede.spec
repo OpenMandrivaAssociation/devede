@@ -1,6 +1,6 @@
 Name:		devede
 Version:	3.22.0
-Release:	%mkrel 1
+Release:	%mkrel 2
 Summary:	Graphical frontend to create video DVDs/(S)VCDs
 License:	GPLv3+
 Group:		Graphical desktop/Other
@@ -35,7 +35,7 @@ VCDImager, and mkisofs, so it has very few dependencies.
 %__sed -i -e '/^#!\//, 1d' %{name}_*.py
 
 %build
-%__sed -i 's/\/usr\/lib\/devede/\/usr\/share\/devede/' %{name}.py
+%__sed -i 's/\/usr\/lib\/devede/\/usr\/share\/devede/' %{name}
 
 %install
 # The stuff that goes to /usr/lib is just python scripts, not actually
