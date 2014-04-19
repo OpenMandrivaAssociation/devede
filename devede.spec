@@ -1,6 +1,6 @@
 Name:		devede
 Version:	3.22.0
-Release:	%mkrel 2
+Release:	3
 Summary:	Graphical frontend to create video DVDs/(S)VCDs
 License:	GPLv3+
 Group:		Graphical desktop/Other
