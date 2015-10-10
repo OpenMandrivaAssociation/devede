@@ -1,3 +1,5 @@
+%define oname devedeng
+
 Name:		devede
 Version:	4.2
 Release:	1
@@ -5,7 +7,7 @@ Summary:	Graphical frontend to create video DVDs/(S)VCDs
 License:	GPLv3+
 Group:		Graphical desktop/Other
 URL:		http://www.rastersoft.com/programas/devede.html
-Source0:	http://www.rastersoft.com/descargas/%{name}-%{version}.tar.bz2
+Source0:	http://www.rastersoft.com/descargas/%{oname}-%{version}.tar.bz2
 # Created from upstream .svg icon by GIMP - ImageMagick does not do well
 # at converting .svg on the fly - AdamW 2007/09
 Source1:	devede-16.png
@@ -29,13 +31,13 @@ nearly any video format. It only uses Python, MPlayer, Mencoder, DVDAuthor,
 VCDImager, and mkisofs, so it has very few dependencies.
 
 %prep
-%setup -q
+%setup -q -n %{oname}
 
 # remove shebangs...
-%__sed -i -e '/^#!\//, 1d' %{name}_*.py
+%__sed -i -e '/^#!\//, 1d' %{oname}_*.py
 
 %build
-%__sed -i 's/\/usr\/lib\/devede/\/usr\/share\/devede/' %{name}
+%__sed -i 's/\/usr\/lib\/devede/\/usr\/share\/devede/' %{oname}
 
 %install
 # The stuff that goes to /usr/lib is just python scripts, not actually
@@ -48,24 +50,24 @@ libdir=%{_datadir}/ \
 
 # fd.o icons
 mkdir -p %{buildroot}/%{_iconsdir}/hicolor/{16x16,32x32,48x48,scalable}/apps
-mv %{buildroot}/%{_datadir}/pixmaps/%{name}.svg %{buildroot}/%{_iconsdir}/hicolor/scalable/apps/%{name}.svg
-install -m 644 %{SOURCE1} %{buildroot}/%{_iconsdir}/hicolor/16x16/apps/%{name}.png
-install -m 644 %{SOURCE2} %{buildroot}/%{_iconsdir}/hicolor/32x32/apps/%{name}.png
-install -m 644 %{SOURCE3} %{buildroot}/%{_iconsdir}/hicolor/48x48/apps/%{name}.png
+mv %{buildroot}/%{_datadir}/pixmaps/%{oname}.svg %{buildroot}/%{_iconsdir}/hicolor/scalable/apps/%{oname}.svg
+install -m 644 %{SOURCE1} %{buildroot}/%{_iconsdir}/hicolor/16x16/apps/%{oname}.png
+install -m 644 %{SOURCE2} %{buildroot}/%{_iconsdir}/hicolor/32x32/apps/%{oname}.png
+install -m 644 %{SOURCE3} %{buildroot}/%{_iconsdir}/hicolor/48x48/apps/%{oname}.png
 
 # redundant files, temp files...
-rm -f %{buildroot}/%{_bindir}/%{name}-debug
-rm -f %{buildroot}/%{_datadir}/doc/%{name}/html/*~
+rm -f %{buildroot}/%{_bindir}/%{oname}-debug
+rm -f %{buildroot}/%{_datadir}/doc/%{oname}/html/*~
 
-%find_lang %{name}
+%find_lang %{oname}
 
-%files -f %{name}.lang
+%files -f %{oname}.lang
 %defattr(0755,root,root,0755)
-%{_bindir}/%{name}
-%{_bindir}/%{name}_debug
+%{_bindir}/%{oname}
+%{_bindir}/%{oname}_debug
 %defattr(0644,root,root,0755)
-%{_datadir}/applications/%{name}.desktop
-%{_datadir}/%{name}
-%{_datadir}/doc/%{name}
-%{_iconsdir}/hicolor/*/apps/%{name}.*
+%{_datadir}/applications/%{oname}.desktop
+%{_datadir}/%{oname}
+%{_datadir}/doc/%{oname}
+%{_iconsdir}/hicolor/*/apps/%{oname}.*
 
