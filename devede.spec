@@ -16,6 +16,7 @@ Source3:	devede-48.png
 BuildArch:	noarch
 BuildRequires:	bash
 BuildRequires:	coreutils
+BuildRequires:	python-setuptools
 Requires:	dvdauthor
 Requires:	mencoder
 Requires:	mkisofs
