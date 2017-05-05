@@ -1,3 +1,8 @@
+removed_sources:
+  devedeng-4.2.tar.gz: 0bae6a1b1001b35cd219adb323e880da22f70a0f
 sources:
-  "devede-3.22.0.tar.bz2": 673534f7f29066a169b421947249a3edca22629e
-  "devedeng-4.2.tar.gz": 0bae6a1b1001b35cd219adb323e880da22f70a0f
+  devede-16.png: 8aeeea35b38b03f07e864997144132d5cd96a6a7
+  devede-3.22.0.tar.bz2: 673534f7f29066a169b421947249a3edca22629e
+  devede-32.png: c7ffa31f91d5273e0f06d7c1d7efa4e687910876
+  devede-48.png: e6f201b4041373e46261340cbbde01fff4a8f22a
+  devedeng-4.8.8.tar.gz: 69cb2368e4cb6dfccbb1d6a96f63e8ef1666cb21

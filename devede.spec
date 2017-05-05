@@ -1,7 +1,7 @@
 %define oname devedeng
 
 Name:		devede
-Version:	4.2
+Version:	4.8.8
 Release:	1
 Summary:	Graphical frontend to create video DVDs/(S)VCDs
 License:	GPLv3+
@@ -20,10 +20,10 @@ Requires:	dvdauthor
 Requires:	mencoder
 Requires:	mkisofs
 Requires:	mplayer
-Requires:	pygtk2.0
-Requires:	python3
+Requires:	typelib(Gtk) = 3.0
+Requires:	python
 Requires:	vcdimager
-Requires:	python3-cairo
+Requires:	python-cairo
 
 %description
 DeVeDe is a program to create video DVDs (compatible with home players) from
@@ -31,22 +31,14 @@ nearly any video format. It only uses Python, MPlayer, Mencoder, DVDAuthor,
 VCDImager, and mkisofs, so it has very few dependencies.
 
 %prep
-%setup -q -n %{oname}
-
-# remove shebangs...
-%__sed -i -e '/^#!\//, 1d' %{oname}_*.py
+%setup -q -n %{oname}-%{version}
 
 %build
-%__sed -i 's/\/usr\/lib\/devede/\/usr\/share\/devede/' %{oname}
+python setup.py build
 
 %install
-# The stuff that goes to /usr/lib is just python scripts, not actually
-# arch-specific. The app always looks for them in /usr/lib , even on
-# x86-64. So define libdir as %_prefix/lib. See bug #31692. -AdamW 2007/06
-DESTDIR=%{buildroot} \
-prefix=%{_prefix} \
-libdir=%{_datadir}/ \
-	./install.sh
+
+python setup.py install --root=%{buildroot}
 
 # fd.o icons
 mkdir -p %{buildroot}/%{_iconsdir}/hicolor/{16x16,32x32,48x48,scalable}/apps
@@ -63,11 +55,12 @@ rm -f %{buildroot}/%{_datadir}/doc/%{oname}/html/*~
 
 %files -f %{oname}.lang
 %defattr(0755,root,root,0755)
-%{_bindir}/%{oname}
-%{_bindir}/%{oname}_debug
+%{_bindir}/devede_ng.py
+%{_bindir}/copy_files_verbose.py
 %defattr(0644,root,root,0755)
 %{_datadir}/applications/%{oname}.desktop
 %{_datadir}/%{oname}
 %{_datadir}/doc/%{oname}
+%{py_puresitedir}/%{oname}*
 %{_iconsdir}/hicolor/*/apps/%{oname}.*
-
+%{_mandir}/man1/%{name}*
