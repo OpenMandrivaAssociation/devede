@@ -2,7 +2,7 @@
 
 Name:		devede
 Version:	4.8.8
-Release:	1
+Release:	2
 Summary:	Graphical frontend to create video DVDs/(S)VCDs
 License:	GPLv3+
 Group:		Graphical desktop/Other
@@ -25,6 +25,7 @@ Requires:	typelib(Gtk) = 3.0
 Requires:	python
 Requires:	vcdimager
 Requires:	python-cairo
+Requires:	python-pkg-resources
 
 %description
 DeVeDe is a program to create video DVDs (compatible with home players) from
