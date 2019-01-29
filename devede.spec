@@ -61,7 +61,7 @@ rm -f %{buildroot}/%{_datadir}/doc/%{oname}/html/*~
 %{_bindir}/devede_ng.py
 %{_bindir}/copy_files_verbose.py
 %defattr(0644,root,root,0755)
-%{_datadir}applications/devede_ng.py.desktop
+%{_datadir}/applications/devede_ng.py.desktop
 %{_datadir}/%{oname}
 %{_datadir}/doc/%{oname}
 %{py_puresitedir}/%{oname}*
