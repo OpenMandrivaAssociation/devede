@@ -1,13 +1,13 @@
 %define oname devedeng
 
 Name:		devede
-Version:	4.8.8
-Release:	2
+Version:	4.13.0
+Release:	1
 Summary:	Graphical frontend to create video DVDs/(S)VCDs
 License:	GPLv3+
 Group:		Graphical desktop/Other
 URL:		http://www.rastersoft.com/programas/devede.html
-Source0:	http://www.rastersoft.com/descargas/%{oname}-%{version}.tar.gz
+Source0:	https://gitlab.com/rastersoft/devedeng/-/archive/%{version}/%{oname}-%{version}.tar.bz2
 # Created from upstream .svg icon by GIMP - ImageMagick does not do well
 # at converting .svg on the fly - AdamW 2007/09
 Source1:	devede-16.png
@@ -26,6 +26,7 @@ Requires:	python
 Requires:	vcdimager
 Requires:	python-cairo
 Requires:	python-pkg-resources
+Requires: ffmpeg-devel
 
 %description
 DeVeDe is a program to create video DVDs (compatible with home players) from
