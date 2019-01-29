@@ -61,9 +61,10 @@ rm -f %{buildroot}/%{_datadir}/doc/%{oname}/html/*~
 %{_bindir}/devede_ng.py
 %{_bindir}/copy_files_verbose.py
 %defattr(0644,root,root,0755)
-#{_datadir}/applications/%{oname}.desktop
+%{_datadir}applications/devede_ng.py.desktop
 %{_datadir}/%{oname}
 %{_datadir}/doc/%{oname}
 %{py_puresitedir}/%{oname}*
 %{_iconsdir}/hicolor/*/apps/%{oname}.*
+%{_iconsdir}/hicolor/scalable/apps/devedeng_icon.svg
 %{_mandir}/man1/%{name}*
