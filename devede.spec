@@ -1,7 +1,7 @@
 %define oname devedeng
 
 Name:		devede
-Version:	4.13.0
+Version:	4.14.0
 Release:	1
 Summary:	Graphical frontend to create video DVDs/(S)VCDs
 License:	GPLv3+
@@ -18,9 +18,9 @@ BuildRequires:	bash
 BuildRequires:	coreutils
 BuildRequires:	python-setuptools
 Requires:	dvdauthor
-Requires:	mencoder
+Recommends:	mencoder
 Requires:	mkisofs
-Requires:	mplayer
+Recommends:	mplayer
 Requires:	typelib(Gtk) = 3.0
 Requires:	python
 Requires:	vcdimager
