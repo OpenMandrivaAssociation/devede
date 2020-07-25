@@ -2,7 +2,7 @@
 
 Name:		devede
 Version:	4.16.0
-Release:	1
+Release:	2
 Summary:	Graphical frontend to create video DVDs/(S)VCDs
 License:	GPLv3+
 Group:		Graphical desktop/Other
