@@ -64,6 +64,7 @@ rm -f %{buildroot}/%{_datadir}/doc/%{oname}/html/*~
 %{_datadir}/applications/devede_ng.py.desktop
 %{_datadir}/%{oname}
 %{_datadir}/doc/%{oname}
+%{_datadir}/metainfo/devedeng.appdata.xml
 %{py_puresitedir}/%{oname}*
 %{_iconsdir}/hicolor/*/apps/%{oname}.*
 %{_iconsdir}/hicolor/scalable/apps/devedeng_icon.svg
