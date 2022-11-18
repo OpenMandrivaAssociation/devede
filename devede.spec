@@ -1,8 +1,8 @@
 %define oname devedeng
 
 Name:		devede
-Version:	4.16.0
-Release:	2
+Version:	4.17.0
+Release:	1
 Summary:	Graphical frontend to create video DVDs/(S)VCDs
 License:	GPLv3+
 Group:		Graphical desktop/Other
@@ -64,6 +64,7 @@ rm -f %{buildroot}/%{_datadir}/doc/%{oname}/html/*~
 %{_datadir}/applications/devede_ng.py.desktop
 %{_datadir}/%{oname}
 %{_datadir}/doc/%{oname}
+%{_datadir}/metainfo/devedeng.appdata.xml
 %{py_puresitedir}/%{oname}*
 %{_iconsdir}/hicolor/*/apps/%{oname}.*
 %{_iconsdir}/hicolor/scalable/apps/devedeng_icon.svg
