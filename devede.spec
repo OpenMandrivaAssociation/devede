@@ -1,7 +1,7 @@
 %define oname devedeng
 
 Name:		devede
-Version:	4.17.0
+Version:	4.18.0
 Release:	1
 Summary:	Graphical frontend to create video DVDs/(S)VCDs
 License:	GPLv3+
