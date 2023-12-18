@@ -17,6 +17,7 @@ BuildArch:	noarch
 BuildRequires:	bash
 BuildRequires:	coreutils
 BuildRequires:	python-setuptools
+BuildRequires:  locales-extra-charsets
 Requires:	dvdauthor
 Recommends:	mencoder
 Requires:	mkisofs
