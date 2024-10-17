@@ -6,7 +6,7 @@ Release:	1
 Summary:	Graphical frontend to create video DVDs/(S)VCDs
 License:	GPLv3+
 Group:		Graphical desktop/Other
-URL:		http://www.rastersoft.com/programas/devede.html
+URL:		https://www.rastersoft.com/programas/devede.html
 Source0:	https://gitlab.com/rastersoft/devedeng/-/archive/%{version}/%{oname}-%{version}.tar.bz2
 # Created from upstream .svg icon by GIMP - ImageMagick does not do well
 # at converting .svg on the fly - AdamW 2007/09
