@@ -46,7 +46,7 @@ python setup.py install --root=%{buildroot}
 
 # fd.o icons
 mkdir -p %{buildroot}/%{_iconsdir}/hicolor/{16x16,32x32,48x48,scalable}/apps
-mv %{buildroot}/%{_datadir}/pixmaps/%{oname}.svg %{buildroot}/%{_iconsdir}/hicolor/scalable/apps/%{oname}.svg
+#mv %{buildroot}/%{_datadir}/pixmaps/%{oname}.svg %{buildroot}/%{_iconsdir}/hicolor/scalable/apps/%{oname}.svg
 install -m 644 %{SOURCE1} %{buildroot}/%{_iconsdir}/hicolor/16x16/apps/%{oname}.png
 install -m 644 %{SOURCE2} %{buildroot}/%{_iconsdir}/hicolor/32x32/apps/%{oname}.png
 install -m 644 %{SOURCE3} %{buildroot}/%{_iconsdir}/hicolor/48x48/apps/%{oname}.png
