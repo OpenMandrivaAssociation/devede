@@ -55,9 +55,10 @@ install -m 644 %{SOURCE3} %{buildroot}/%{_iconsdir}/hicolor/48x48/apps/%{oname}.
 rm -f %{buildroot}/%{_bindir}/%{oname}-debug
 rm -f %{buildroot}/%{_datadir}/doc/%{oname}/html/*~
 
-%find_lang %{name}
+#find_lang %{oname}
 
-%files -f %{name}.lang
+%files 
+#-f %{oname}.lang
 %defattr(0755,root,root,0755)
 %{_bindir}/devede_ng.py
 %{_bindir}/copy_files_verbose.py
