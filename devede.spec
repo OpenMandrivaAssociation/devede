@@ -1,73 +1,88 @@
 %define oname devedeng
 
-Name:		devede
-Version:	4.19.0
-Release:	3
 Summary:	Graphical frontend to create video DVDs/(S)VCDs
+Name:		devede
+Version:	4.21.0
+Release:	1
 License:	GPLv3+
-Group:		Graphical desktop/Other
-URL:		https://www.rastersoft.com/programas/devede.html
+Group:	Graphical desktop/Other
+Url:		https://www.rastersoft.com/programas/devede.html
 Source0:	https://gitlab.com/rastersoft/devedeng/-/archive/%{version}/%{oname}-%{version}.tar.bz2
 # Created from upstream .svg icon by GIMP - ImageMagick does not do well
 # at converting .svg on the fly - AdamW 2007/09
 Source1:	devede-16.png
 Source2:	devede-32.png
 Source3:	devede-48.png
+Patch0:	devede-4.21.0-fix-env-shebangs.patch
+BuildRequires:		bash
+BuildRequires:		coreutils
+BuildRequires:		locales-extra-charsets
+BuildRequires:		pkgconfig(python)
+BuildRequires:		python3dist(pyproject-api)
+BuildRequires:		python3dist(setuptools)
+BuildRequires:		python3dist(wheel)
+BuildRequires:		python3dist(hatchling)
 BuildArch:	noarch
-BuildRequires:	bash
-BuildRequires:	coreutils
-BuildRequires:	python-setuptools
-BuildRequires:  locales-extra-charsets
 Requires:	dvdauthor
-Recommends:	mencoder
+Requires:	ffmpeg
 Requires:	mkisofs
-Recommends:	mplayer
-Requires:	typelib(Gtk) = 3.0
-Requires:	python
-Requires:	vcdimager
+Requires:	python >= 3.12
 Requires:	python-cairo
 Requires:	python-pkg-resources
-Requires: ffmpeg-devel
+Requires:	typelib(Gtk) = 3.0
+Requires:	vcdimager
+Recommends:	mpv
 
 %description
-DeVeDe is a program to create video DVDs (compatible with home players) from
-nearly any video format. It only uses Python, MPlayer, Mencoder, DVDAuthor,
-VCDImager, and mkisofs, so it has very few dependencies.
+DeVeDe NG is a program to create video DVDs (compatible with home players)
+from nearly any video format. It only uses Python, MPlayer, Mencoder,
+DVDAuthor, VCDImager and mkisofs, so it has very few dependencies.
+
+%files
+#-f %%{oname}.lang
+%doc src/%{oname}/data/doc/*
+%{_bindir}/%{name}_ng
+%{_datadir}/applications/%{name}_ng.desktop
+#{_datadir}/%%{oname}
+#{_datadir}/doc/%%{oname}
+%{_datadir}/metainfo/com.rastersoft.%{oname}.appdata.xml
+%{_iconsdir}/hicolor/*/apps/%{oname}.*
+%{_iconsdir}/hicolor/scalable/apps/%{oname}_icon.svg
+%{_mandir}/man1/%{name}.1*
+%{py_puresitedir}/%{oname}
+%{py_puresitedir}/%{oname}-%{version}.dist-info
+%{py_puresitedir}/copy_files_verbose.py
+%{py_puresitedir}/__pycache__/copy_files_verbose.cpython-314.pyc
+
+#-----------------------------------------------------------------------------
 
 %prep
-%setup -q -n %{oname}-%{version}
+%autosetup -p1 -n %{oname}-%{version}
+
 
 %build
-python setup.py build
+%py_build
+
 
 %install
+%py_install
 
-python setup.py install --root=%{buildroot}
-
-# fd.o icons
+# Icons
 mkdir -p %{buildroot}/%{_iconsdir}/hicolor/{16x16,32x32,48x48,scalable}/apps
-#mv %{buildroot}/%{_datadir}/pixmaps/%{oname}.svg %{buildroot}/%{_iconsdir}/hicolor/scalable/apps/%{oname}.svg
+#mv %%{buildroot}/%%{_datadir}/pixmaps/%%{oname}.svg %%{buildroot}/%%{_iconsdir}/hicolor/scalable/apps/%%{oname}.svg
 install -m 644 %{SOURCE1} %{buildroot}/%{_iconsdir}/hicolor/16x16/apps/%{oname}.png
 install -m 644 %{SOURCE2} %{buildroot}/%{_iconsdir}/hicolor/32x32/apps/%{oname}.png
 install -m 644 %{SOURCE3} %{buildroot}/%{_iconsdir}/hicolor/48x48/apps/%{oname}.png
 
-# redundant files, temp files...
-rm -f %{buildroot}/%{_bindir}/%{oname}-debug
-rm -f %{buildroot}/%{_datadir}/doc/%{oname}/html/*~
+# Install other useful stuff not installed by default
+mkdir -p %{buildroot}/%{_mandir}/man1
+mkdir -p %{buildroot}/%{_datadir}/metainfo/
+install -m 0644 src/%{oname}/data/%{name}.1 %{buildroot}/%{_mandir}/man1
+install -m 0644 src/%{oname}/data/com.rastersoft.%{oname}.appdata.xml %{buildroot}/%{_datadir}/metainfo/
 
-#find_lang %{oname}
+# Fix perms
+chmod +x %{buildroot}%{py_puresitedir}/copy_files_verbose.py
+chmod +x %{buildroot}%{py_puresitedir}/%{oname}/{__init__,avbase,avconv,avprobe,configuration_data,devedeng,dvdauthor_converter,executor,ffmpeg}.py
+chmod +x %{buildroot}%{py_puresitedir}/%{oname}/{ffprobe,file_copy,genisoimage,help,mkisofs,mplayer,mpv,mux_dvd_menu,subtitles_mux,vcdimager_converter}.py
 
-%files 
-#-f %{oname}.lang
-%defattr(0755,root,root,0755)
-%{_bindir}/devede_ng.py
-%{_bindir}/copy_files_verbose.py
-%defattr(0644,root,root,0755)
-%{_datadir}/applications/devede_ng.py.desktop
-%{_datadir}/%{oname}
-%{_datadir}/doc/%{oname}
-%{_datadir}/metainfo/devedeng.appdata.xml
-%{py_puresitedir}/%{oname}*
-%{_iconsdir}/hicolor/*/apps/%{oname}.*
-%{_iconsdir}/hicolor/scalable/apps/devedeng_icon.svg
-%{_mandir}/man1/%{name}*
+#find_lang %%{oname}

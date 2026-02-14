@@ -1,0 +1,187 @@
+diff -rupN devedeng-4.21.0.old/src/copy_files_verbose.py devedeng-4.21.0/src/copy_files_verbose.py
+--- devedeng-4.21.0.old/src/copy_files_verbose.py	2025-02-08 19:57:43.000000000 +0100
++++ devedeng-4.21.0/src/copy_files_verbose.py	2026-02-14 17:20:24.831868595 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/usr/bin/python3
+ 
+ # Copyright 2014 (C) Raster Software Vigo (Sergio Costas)
+ #
+diff -rupN devedeng-4.21.0.old/src/devedeng/avbase.py devedeng-4.21.0/src/devedeng/avbase.py
+--- devedeng-4.21.0.old/src/devedeng/avbase.py	2025-02-08 19:57:43.000000000 +0100
++++ devedeng-4.21.0/src/devedeng/avbase.py	2026-02-14 17:14:51.517921941 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/usr/bin/python3
+ 
+ # Copyright 2014 (C) Raster Software Vigo (Sergio Costas)
+ #
+diff -rupN devedeng-4.21.0.old/src/devedeng/avconv.py devedeng-4.21.0/src/devedeng/avconv.py
+--- devedeng-4.21.0.old/src/devedeng/avconv.py	2025-02-08 19:57:43.000000000 +0100
++++ devedeng-4.21.0/src/devedeng/avconv.py	2026-02-14 17:14:38.307956772 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/usr/bin/python3
+ 
+ # Copyright 2014 (C) Raster Software Vigo (Sergio Costas)
+ #
+diff -rupN devedeng-4.21.0.old/src/devedeng/avprobe.py devedeng-4.21.0/src/devedeng/avprobe.py
+--- devedeng-4.21.0.old/src/devedeng/avprobe.py	2025-02-08 19:57:43.000000000 +0100
++++ devedeng-4.21.0/src/devedeng/avprobe.py	2026-02-14 17:14:31.180411744 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/usr/bin/python3
+ 
+ # Copyright 2014 (C) Raster Software Vigo (Sergio Costas)
+ #
+diff -rupN devedeng-4.21.0.old/src/devedeng/configuration_data.py devedeng-4.21.0/src/devedeng/configuration_data.py
+--- devedeng-4.21.0.old/src/devedeng/configuration_data.py	2025-02-08 19:57:43.000000000 +0100
++++ devedeng-4.21.0/src/devedeng/configuration_data.py	2026-02-14 17:14:23.661528629 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/usr/bin/python3
+ 
+ # Copyright 2014 (C) Raster Software Vigo (Sergio Costas)
+ #
+diff -rupN devedeng-4.21.0.old/src/devedeng/devedeng.py devedeng-4.21.0/src/devedeng/devedeng.py
+--- devedeng-4.21.0.old/src/devedeng/devedeng.py	2025-02-08 19:57:43.000000000 +0100
++++ devedeng-4.21.0/src/devedeng/devedeng.py	2026-02-14 17:14:14.841959301 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/usr/bin/python3
+ 
+ # Copyright 2014 (C) Raster Software Vigo (Sergio Costas)
+ #
+diff -rupN devedeng-4.21.0.old/src/devedeng/dvdauthor_converter.py devedeng-4.21.0/src/devedeng/dvdauthor_converter.py
+--- devedeng-4.21.0.old/src/devedeng/dvdauthor_converter.py	2025-02-08 19:57:43.000000000 +0100
++++ devedeng-4.21.0/src/devedeng/dvdauthor_converter.py	2026-02-14 17:14:04.738052313 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/usr/bin/python3
+ 
+ # Copyright 2014 (C) Raster Software Vigo (Sergio Costas)
+ #
+diff -rupN devedeng-4.21.0.old/src/devedeng/executor.py devedeng-4.21.0/src/devedeng/executor.py
+--- devedeng-4.21.0.old/src/devedeng/executor.py	2025-02-08 19:57:43.000000000 +0100
++++ devedeng-4.21.0/src/devedeng/executor.py	2026-02-14 17:13:55.899764822 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/usr/bin/python3
+ 
+ # Copyright 2014 (C) Raster Software Vigo (Sergio Costas)
+ #
+diff -rupN devedeng-4.21.0.old/src/devedeng/ffmpeg.py devedeng-4.21.0/src/devedeng/ffmpeg.py
+--- devedeng-4.21.0.old/src/devedeng/ffmpeg.py	2025-02-08 19:57:43.000000000 +0100
++++ devedeng-4.21.0/src/devedeng/ffmpeg.py	2026-02-14 17:13:45.542654760 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/usr/bin/python3
+ 
+ # Copyright 2014 (C) Raster Software Vigo (Sergio Costas)
+ #
+diff -rupN devedeng-4.21.0.old/src/devedeng/ffprobe.py devedeng-4.21.0/src/devedeng/ffprobe.py
+--- devedeng-4.21.0.old/src/devedeng/ffprobe.py	2025-02-08 19:57:43.000000000 +0100
++++ devedeng-4.21.0/src/devedeng/ffprobe.py	2026-02-14 17:13:37.797040976 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/usr/bin/python3
+ 
+ # Copyright 2014 (C) Raster Software Vigo (Sergio Costas)
+ #
+diff -rupN devedeng-4.21.0.old/src/devedeng/file_copy.py devedeng-4.21.0/src/devedeng/file_copy.py
+--- devedeng-4.21.0.old/src/devedeng/file_copy.py	2025-02-08 19:57:43.000000000 +0100
++++ devedeng-4.21.0/src/devedeng/file_copy.py	2026-02-14 17:13:29.779105263 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/usr/bin/python3
+ 
+ # Copyright 2014 (C) Raster Software Vigo (Sergio Costas)
+ #
+diff -rupN devedeng-4.21.0.old/src/devedeng/genisoimage.py devedeng-4.21.0/src/devedeng/genisoimage.py
+--- devedeng-4.21.0.old/src/devedeng/genisoimage.py	2025-02-08 19:57:43.000000000 +0100
++++ devedeng-4.21.0/src/devedeng/genisoimage.py	2026-02-14 17:13:21.022687720 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/usr/bin/python3
+ 
+ # Copyright 2014 (C) Raster Software Vigo (Sergio Costas)
+ #
+diff -rupN devedeng-4.21.0.old/src/devedeng/help.py devedeng-4.21.0/src/devedeng/help.py
+--- devedeng-4.21.0.old/src/devedeng/help.py	2025-02-08 19:57:43.000000000 +0100
++++ devedeng-4.21.0/src/devedeng/help.py	2026-02-14 17:13:10.441591399 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/usr/bin/python3
+ 
+ # Copyright 2014 (C) Raster Software Vigo (Sergio Costas)
+ #
+diff -rupN devedeng-4.21.0.old/src/devedeng/__init__.py devedeng-4.21.0/src/devedeng/__init__.py
+--- devedeng-4.21.0.old/src/devedeng/__init__.py	2025-02-08 19:57:43.000000000 +0100
++++ devedeng-4.21.0/src/devedeng/__init__.py	2026-02-14 17:14:59.769015979 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/usr/bin/python3
+ 
+ # Copyright 2014 (C) Raster Software Vigo (Sergio Costas)
+ #
+@@ -16,4 +16,4 @@
+ # You should have received a copy of the GNU General Public License
+ # along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
+-import devedeng.devedeng as devedeng
+\ Manca newline alla fine del file
++import devedeng.devedeng as devedeng
+diff -rupN devedeng-4.21.0.old/src/devedeng/mkisofs.py devedeng-4.21.0/src/devedeng/mkisofs.py
+--- devedeng-4.21.0.old/src/devedeng/mkisofs.py	2025-02-08 19:57:43.000000000 +0100
++++ devedeng-4.21.0/src/devedeng/mkisofs.py	2026-02-14 17:13:02.549425504 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/usr/bin/python3
+ 
+ # Copyright 2014 (C) Raster Software Vigo (Sergio Costas)
+ #
+diff -rupN devedeng-4.21.0.old/src/devedeng/mplayer.py devedeng-4.21.0/src/devedeng/mplayer.py
+--- devedeng-4.21.0.old/src/devedeng/mplayer.py	2025-02-08 19:57:43.000000000 +0100
++++ devedeng-4.21.0/src/devedeng/mplayer.py	2026-02-14 17:12:54.365422404 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/usr/bin/python3
+ 
+ # Copyright 2014 (C) Raster Software Vigo (Sergio Costas)
+ #
+diff -rupN devedeng-4.21.0.old/src/devedeng/mpv.py devedeng-4.21.0/src/devedeng/mpv.py
+--- devedeng-4.21.0.old/src/devedeng/mpv.py	2025-02-08 19:57:43.000000000 +0100
++++ devedeng-4.21.0/src/devedeng/mpv.py	2026-02-14 17:12:46.211979730 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/usr/bin/python3
+ 
+ # Copyright 2014 (C) Raster Software Vigo (Sergio Costas)
+ #
+diff -rupN devedeng-4.21.0.old/src/devedeng/mux_dvd_menu.py devedeng-4.21.0/src/devedeng/mux_dvd_menu.py
+--- devedeng-4.21.0.old/src/devedeng/mux_dvd_menu.py	2025-02-08 19:57:43.000000000 +0100
++++ devedeng-4.21.0/src/devedeng/mux_dvd_menu.py	2026-02-14 17:12:37.648332165 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/usr/bin/python3
+ 
+ # Copyright 2014 (C) Raster Software Vigo (Sergio Costas)
+ #
+diff -rupN devedeng-4.21.0.old/src/devedeng/subtitles_mux.py devedeng-4.21.0/src/devedeng/subtitles_mux.py
+--- devedeng-4.21.0.old/src/devedeng/subtitles_mux.py	2025-02-08 19:57:43.000000000 +0100
++++ devedeng-4.21.0/src/devedeng/subtitles_mux.py	2026-02-14 17:12:09.062805555 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/usr/bin/python3
+ 
+ # Copyright 2014 (C) Raster Software Vigo (Sergio Costas)
+ #
+diff -rupN devedeng-4.21.0.old/src/devedeng/vcdimager_converter.py devedeng-4.21.0/src/devedeng/vcdimager_converter.py
+--- devedeng-4.21.0.old/src/devedeng/vcdimager_converter.py	2025-02-08 19:57:43.000000000 +0100
++++ devedeng-4.21.0/src/devedeng/vcdimager_converter.py	2026-02-14 17:11:57.970546862 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/usr/bin/python3
+ 
+ # Copyright 2014 (C) Raster Software Vigo (Sergio Costas)
+ #
