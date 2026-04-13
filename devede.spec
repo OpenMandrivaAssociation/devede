@@ -1,11 +1,11 @@
 %define oname devedeng
 
-Summary:	Graphical frontend to create video DVDs/(S)VCDs
+Summary:		Graphical frontend to create video DVDs/(S)VCDs
 Name:		devede
-Version:	4.21.0
-Release:	1
-License:	GPLv3+
-Group:	Graphical desktop/Other
+Version:		4.21.3.1
+Release:		1
+License:		GPLv3+
+Group:	Graphics
 Url:		https://www.rastersoft.com/programas/devede.html
 Source0:	https://gitlab.com/rastersoft/devedeng/-/archive/%{version}/%{oname}-%{version}.tar.bz2
 # Created from upstream .svg icon by GIMP - ImageMagick does not do well
@@ -18,11 +18,11 @@ BuildRequires:		bash
 BuildRequires:		coreutils
 BuildRequires:		locales-extra-charsets
 BuildRequires:		pkgconfig(python)
+BuildRequires:		python3dist(hatchling)
 BuildRequires:		python3dist(pyproject-api)
 BuildRequires:		python3dist(setuptools)
 BuildRequires:		python3dist(wheel)
-BuildRequires:		python3dist(hatchling)
-BuildArch:	noarch
+BuildArch:		noarch
 Requires:	dvdauthor
 Requires:	ffmpeg
 Requires:	mkisofs
@@ -31,12 +31,15 @@ Requires:	python-cairo
 Requires:	python-pkg-resources
 Requires:	typelib(Gtk) = 3.0
 Requires:	vcdimager
+Recommends:	k3b
 Recommends:	mpv
+Recommends:	vlc
+
 
 %description
 DeVeDe NG is a program to create video DVDs (compatible with home players)
-from nearly any video format. It only uses Python, MPlayer, Mencoder,
-DVDAuthor, VCDImager and mkisofs, so it has very few dependencies.
+from nearly any video format. It only uses Python, Mpv, Mencoder, DVDAuthor,
+VCDImager and mkisofs, so it has very few dependencies.
 
 %files
 #-f %%{oname}.lang
@@ -50,7 +53,7 @@ DVDAuthor, VCDImager and mkisofs, so it has very few dependencies.
 %{_iconsdir}/hicolor/scalable/apps/%{oname}_icon.svg
 %{_mandir}/man1/%{name}.1*
 %{py_puresitedir}/%{oname}
-%{py_puresitedir}/%{oname}-%{version}.dist-info
+%{py_puresitedir}/%{oname}-4.21.3.dist-info
 %{py_puresitedir}/copy_files_verbose.py
 %{py_puresitedir}/__pycache__/copy_files_verbose.cpython-314.pyc
 
@@ -68,11 +71,10 @@ DVDAuthor, VCDImager and mkisofs, so it has very few dependencies.
 %py_install
 
 # Icons
-mkdir -p %{buildroot}/%{_iconsdir}/hicolor/{16x16,32x32,48x48,scalable}/apps
-#mv %%{buildroot}/%%{_datadir}/pixmaps/%%{oname}.svg %%{buildroot}/%%{_iconsdir}/hicolor/scalable/apps/%%{oname}.svg
-install -m 644 %{SOURCE1} %{buildroot}/%{_iconsdir}/hicolor/16x16/apps/%{oname}.png
-install -m 644 %{SOURCE2} %{buildroot}/%{_iconsdir}/hicolor/32x32/apps/%{oname}.png
-install -m 644 %{SOURCE3} %{buildroot}/%{_iconsdir}/hicolor/48x48/apps/%{oname}.png
+mkdir -p %{buildroot}/%{_iconsdir}/hicolor/{16x16,32x32,48x48}/apps
+install -m 644 %{SOURCE1} %{buildroot}%{_iconsdir}/hicolor/16x16/apps/%{oname}.png
+install -m 644 %{SOURCE2} %{buildroot}%{_iconsdir}/hicolor/32x32/apps/%{oname}.png
+install -m 644 %{SOURCE3} %{buildroot}%{_iconsdir}/hicolor/48x48/apps/%{oname}.png
 
 # Install other useful stuff not installed by default
 mkdir -p %{buildroot}/%{_mandir}/man1
