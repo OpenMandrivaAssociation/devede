@@ -3,7 +3,7 @@
 Summary:		Graphical frontend to create video DVDs/(S)VCDs
 Name:		devede
 Version:		4.21.3.1
-Release:		1
+Release:		2
 License:		GPLv3+
 Group:	Graphics
 Url:		https://www.rastersoft.com/programas/devede.html
