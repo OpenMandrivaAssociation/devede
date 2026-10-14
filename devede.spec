@@ -17,18 +17,19 @@ Patch0:	devede-4.21.0-fix-env-shebangs.patch
 BuildRequires:		bash
 BuildRequires:		coreutils
 BuildRequires:		locales-extra-charsets
-BuildRequires:		pkgconfig(python)
-BuildRequires:		python3dist(hatchling)
-BuildRequires:		python3dist(pyproject-api)
-BuildRequires:		python3dist(setuptools)
-BuildRequires:		python3dist(wheel)
+BuildRequires:		pkgconfig(python3)
+BuildRequires:		python%{pyver}dist(hatchling)
+BuildRequires:		python%{pyver}dist(pip)
+BuildRequires:		python%{pyver}dist(pyproject-api)
+BuildRequires:		python%{pyver}dist(setuptools)
+BuildRequires:		python%{pyver}dist(wheel)
 BuildArch:		noarch
 Requires:	dvdauthor
 Requires:	ffmpeg
 Requires:	mkisofs
 Requires:	python >= 3.12
 Requires:	python-cairo
-Requires:	python-pkg-resources
+Requires:	python%{pyver}dist(setuptools)
 Requires:	typelib(Gtk) = 3.0
 Requires:	vcdimager
 Recommends:	k3b
@@ -55,7 +56,7 @@ VCDImager and mkisofs, so it has very few dependencies.
 %{py_puresitedir}/%{oname}
 %{py_puresitedir}/%{oname}-4.21.3.dist-info
 %{py_puresitedir}/copy_files_verbose.py
-%{py_puresitedir}/__pycache__/copy_files_verbose.cpython-314.pyc
+%{py_puresitedir}/__pycache__/copy_files_verbose.cpython-3*.pyc
 
 #-----------------------------------------------------------------------------
 
